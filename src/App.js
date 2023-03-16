@@ -1,24 +1,34 @@
 import logo from './logo.svg';
 import './App.css';
+import Footer from './components/footer/Footer';
+import useMedia from './hooks/useMedia';
+import useFetch from './hooks/useFetch';
+import TopTextSlider from './components/footer/topTextSlider/TopTextSlider';
+import Header from './components/header/Header';
+import CaseHighlights from './components/caseHighlights/CaseHighlights';
 
 function App() {
+  const {response ,error, loading} = useFetch(`${process.env.REACT_APP_API_URL}`);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+
+    {loading ? <div>
+    <div className='shimmer shimmer--topslider'></div>
+    </div> : <>
+    <Header/>
+    <TopTextSlider data={response?.acf?.top_text_slider}/>
+    <CaseHighlights data={response?.acf?.case_section}/>
+    </>}
+
+      <div>
+
+      </div>
+      <Footer />
+      <div className='shimmer shimmer--topslider'></div>
+    </>
+
+
   );
 }
 

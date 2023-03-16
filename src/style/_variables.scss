@@ -1,0 +1,88 @@
+$white: #fff !default;
+$gray-1: #f9fbfd !default;
+$gray-2: #f0f5f8 !default;
+$gray-3: #dce4e9 !default;
+$gray-4: #d4d7da !default;
+$gray-5: #a3aab0 !default;
+$gray-6: #8d939a !default;
+$gray-7: #49545f !default;
+$gray-8: #363f48 !default;
+$teal-1: #ecfaf6 !default;
+$teal-2: #6ce1c1 !default;
+$teal-3: #61ca9f !default;
+$teal-4: #20ce9c !default;
+$teal-5: #09ba87 !default;
+$blue-1: #1f61dd !default;
+$blue-2: #1955c5 !default;
+$blue-3: #1955c5 !default;
+$blue-4: #0a1d40 !default;
+$base-dark: #0d1014 !default;
+
+$black: #000 !default;
+$base: (
+  "white": $white,
+  "dark": $base-dark,
+);
+
+$grays: (
+  "1": $gray-1,
+  "2": $gray-2,
+  "3": $gray-3,
+  "4": $gray-4,
+  "5": $gray-5,
+  "6": $gray-6,
+  "7": $gray-7,
+  "8": $gray-8,
+) !default;
+
+$teals: (
+  "1": $teal-1,
+  "2": $teal-2,
+  "3": $teal-3,
+  "4": $teal-4,
+  "5": $teal-5,
+) !default;
+
+$blues: (
+  "1": $blue-1,
+  "2": $blue-2,
+  "3": $blue-3,
+  "4": $blue-4,
+) !default;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+) !default;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px,
+) !default;
+
+$variable-prefix: bs- !default; // Deprecated in v5.2.0 for the shorter `$prefix`
+$prefix: $variable-prefix !default;
+
+$grid-columns: 12 !default;
+$grid-gutter-width: 1.5rem !default;
+$grid-row-columns: 6 !default;
+
+// Container padding
+
+$container-padding-x: $grid-gutter-width !default;
+
+
+$font-family-base: 'Figtree', sans-serif;
+$font-size-base:              1rem !default;
+
+$font-weight-normal:          400 !default;
+$font-weight-base:            $font-weight-normal !default;
+
+$line-height-base:            1.5 !default;

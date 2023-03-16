@@ -1,0 +1,14 @@
+.footer{
+    background: var(--base-dark);
+    color   : #ffffff;
+    padding-bottom: 2rem;
+    &__address{
+        span{
+            display: block;
+        }
+
+    }
+    &__list{
+
+    }
+}

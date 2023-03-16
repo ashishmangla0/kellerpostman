@@ -1,0 +1,16 @@
+.container,
+// 100% wide container at all breakpoints
+.container-fluid {
+  @include make-container();
+}
+@each $breakpoint, $container-max-width in $container-max-widths {
+    // .container-#{$breakpoint} {
+    //   @extend .container-fluid;
+    // }
+
+    @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+      .container {
+        max-width: $container-max-width;
+      }
+    }
+  }

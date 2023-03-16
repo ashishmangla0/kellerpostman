@@ -1,0 +1,23 @@
+@import "variables";
+@import "mixins";
+@import "root";
+@import "reboot";
+@import 'containers';
+@import "grid";
+@import "utills";
+@import 'shimmer';
+
+
+
+.shimmer{
+&--topslider{
+    height:3.625rem;
+    width: 100%;
+}
+}
+
+.footer-shimmer{
+
+    width: 200px;
+
+}
