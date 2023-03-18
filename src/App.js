@@ -8,18 +8,18 @@ import Header from './components/header/Header';
 import CaseHighlights from './components/caseHighlights/CaseHighlights';
 
 function App() {
-  const {response , loading} = useFetch(`${process.env.REACT_APP_API_URL}`);
+  const { response, error, loading } = useFetch(`${process.env.REACT_APP_API_URL}`);
 
   return (
     <>
 
-    {loading ? <div>
-    <div className='shimmer shimmer--topslider'></div>
-    </div> : <>
-    <Header/>
-    <TopTextSlider data={response?.acf?.top_text_slider}/>
-    <CaseHighlights data={response?.acf?.case_section}/>
-    </>}
+      {loading ? <div>
+        <div className='shimmer shimmer--topslider'></div>
+      </div> : <>
+        <Header />
+        <TopTextSlider data={response?.acf?.top_text_slider} />
+        <CaseHighlights data={response?.acf?.case_section} />
+      </>}
 
       <div>
 

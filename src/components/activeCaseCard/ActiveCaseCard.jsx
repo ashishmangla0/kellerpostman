@@ -8,6 +8,7 @@ const ActiveCaseCard = ({ title, description, imgSrc, cardClassess,link }) => {
                 <div className="card__image">
                 <img src={`./${link}.jpg`} alt={title} />
                 </div>
+                <i className="icon icon-facebook"></i>
 
                     <div className="card__content">
                         <h3 className="card__title" tabIndex={0}>

@@ -44,7 +44,15 @@ const featureCases = [
   },
 ];
 
-const socialList = [{}, {}, {}];
+const socialList = [
+  { title: "facebook" ,
+link: ''
+},
+  { title: "linkedin",
+  link: '' },
+  { title: "twitter" ,
+  link: ''},
+];
 
 const offices = [
   {
@@ -102,6 +110,20 @@ const RenderOffice = () => {
   );
 };
 
+const RenderSocialLinks = () => {
+  return (
+    <>
+      {socialList.map((socialItem) => (
+        <li className="footer__item">
+          <a className="" href={socialItem.link}>
+            <i className={`icon icon-${socialItem.title}`}></i>
+          </a>
+        </li>
+      ))}
+    </>
+  );
+};
+
 const TitleList = (props) => {
   const { title, titleClasess, renderList, listClasess } = props;
   return (
@@ -118,11 +140,11 @@ const Footer = () => {
       <div className="footer__top">
         <div className="container">
           <div className="row">
-         <div className="col-12">
-         <div className="footer__contact text-sm-center">
-            call us at <a href="tel:872-264-6677">872-264-6677</a>
-          </div>
-         </div>
+            <div className="col-12">
+              <div className="footer__contact text-sm-center">
+                call us at <a href="tel:872-264-6677">872-264-6677</a>
+              </div>
+            </div>
             <div className="col-md-3">
               <TitleList
                 title="sitemap"
@@ -147,23 +169,30 @@ const Footer = () => {
                 listClasess={"footer__list"}
               />
             </div>
+            <div className="col-md-4">
+              <TitleList
+                title="follow us"
+                titleClasess={"footer__title"}
+                renderList={<RenderSocialLinks />}
+                listClasess={"footer__list"}
+              />
+            </div>
           </div>
         </div>
       </div>
       <div className="footer__bottom text-sm-center">
-      <div className="container">
-        © {new Date().getFullYear()} Keller Postman LLC. All rights reserved.
-        <ul>
-        {deepFooterLinks.map((deeplink) => (
-          <li>{deeplink.title}</li>
-        ))}
-        </ul>
-
-        <p>
-          This site is protected by reCAPTCHA and the Google Privacy Policy and
-          Terms of Service apply.
-        </p>
-      </div>
+        <div className="container">
+          © {new Date().getFullYear()} Keller Postman LLC. All rights reserved.
+          <ul>
+            {deepFooterLinks.map((deeplink) => (
+              <li>{deeplink.title}</li>
+            ))}
+          </ul>
+          <p>
+            This site is protected by reCAPTCHA and the Google Privacy Policy
+            and Terms of Service apply.
+          </p>
+        </div>
       </div>
     </footer>
   );

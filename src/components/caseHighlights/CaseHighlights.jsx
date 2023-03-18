@@ -13,17 +13,17 @@ const CaseHighlights = (props) => {
     'Representing Veterans with Hearing Damage and Hearing Loss'
   ];
   const sortObj = (obj, property) => {
-    let sortedObj = obj.sort(
+    let sortedObj = obj?.sort(
       (p1, p2) => (p1[property] - p2[property]))
     return sortedObj;
   }
 
-  var dataWithDummyText = sortObj(data?.home_cases,'ID').map(function (homeCase, index) {
+  var dataWithDummyText = sortObj(data?.home_cases,'ID')?.map(function (homeCase, index) {
     return {
-        post_title: homeCase.post_title,
+        post_title: homeCase?.post_title,
         description: dummyText[index],
-        id:homeCase.ID,
-        post_name : homeCase.post_name
+        id:homeCase?.ID,
+        post_name : homeCase?.post_name
     };
   });
 
@@ -35,7 +35,7 @@ const CaseHighlights = (props) => {
           <div className="row  gx-5">
             {dataWithDummyText?.map((homeCase) => (
               <div className="col-12 col-sm-6 col-md-4">
-                <ActiveCaseCard title={homeCase.post_title} description={homeCase.description} link={homeCase.post_name} />
+                <ActiveCaseCard title={homeCase?.post_title} description={homeCase?.description} link={homeCase?.post_name} />
               </div>
             ))}
           </div>
