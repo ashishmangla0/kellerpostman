@@ -8,7 +8,7 @@ import Header from './components/header/Header';
 import CaseHighlights from './components/caseHighlights/CaseHighlights';
 
 function App() {
-  const {response ,error, loading} = useFetch(`${process.env.REACT_APP_API_URL}`);
+  const {response , loading} = useFetch(`${process.env.REACT_APP_API_URL}`);
 
   return (
     <>

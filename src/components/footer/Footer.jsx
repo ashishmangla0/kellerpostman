@@ -153,9 +153,12 @@ const Footer = () => {
       <div className="footer__bottom text-sm-center">
       <div className="container">
         © {new Date().getFullYear()} Keller Postman LLC. All rights reserved.
+        <ul>
         {deepFooterLinks.map((deeplink) => (
           <li>{deeplink.title}</li>
         ))}
+        </ul>
+
         <p>
           This site is protected by reCAPTCHA and the Google Privacy Policy and
           Terms of Service apply.
