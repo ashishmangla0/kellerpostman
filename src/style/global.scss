@@ -1,5 +1,6 @@
 @import "variables";
 @import "mixins";
+@import 'rem';
 @import "root";
 @import "reboot";
 @import 'containers';
@@ -18,6 +19,12 @@
 
 .footer-shimmer{
 
-    width: 200px;
+    width: toRem(200);
 
 }
+
+// @include media-breakpoint-up(sm){
+// body{
+//     background: green;
+// }
+// }

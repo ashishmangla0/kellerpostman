@@ -118,16 +118,26 @@
           }
         }
       }
+
+      @each $key, $value in $gutters {
+        .g#{$infix}-#{$key},
+        .gx#{$infix}-#{$key} {
+          --#{$prefix}gutter-x: #{$value};
+        }
+
+        .g#{$infix}-#{$key},
+        .gy#{$infix}-#{$key} {
+          --#{$prefix}gutter-y: #{$value};
+        }
+      }
     }
   }
 }
 
 @mixin make-col-ready($gutter: $grid-gutter-width) {
   position: relative;
-  // Prevent columns from becoming too narrow when at smaller grid tiers by
-  // always setting `width: 100%;`. This works because we use `flex` values
-  // later on to override this initial width.
+ 
   width: 100%;
-  padding-right: $gutter * .5;
-  padding-left: $gutter * .5;
+  padding-right: calc(var(--#{$prefix}gutter-x) * .5); // stylelint-disable-line function-disallowed-list
+  padding-left: calc(var(--#{$prefix}gutter-x) * .5);
 }

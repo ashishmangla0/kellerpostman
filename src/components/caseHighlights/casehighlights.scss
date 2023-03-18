@@ -1,5 +1,13 @@
+@import "../../style/variables";
+@import "../../style/mixins";
+@import '../../style/rem';
 .casehighlights{
     background: var(--blue-4);
-    padding:3.125rem 0 ;
+    padding:toRem(50) 0 ;
     color: var(--base-white);
 }
+
+
+@include media-breakpoint-up(sm){
+    
+    }
