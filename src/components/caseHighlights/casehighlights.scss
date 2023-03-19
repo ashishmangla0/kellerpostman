@@ -5,9 +5,19 @@
     background: var(--blue-4);
     padding:toRem(50) 0 ;
     color: var(--base-white);
-}
+    &__card{
 
+        @include media-breakpoint-up(sm){
+            .card{
+                &__title{
+                    min-height: toRem(60) ;
+                }
+                &__desc{
+                    min-height: toRem(52);
+                }
 
-@include media-breakpoint-up(sm){
-    
+            }
+        }
+
     }
+}

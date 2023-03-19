@@ -1,27 +1,24 @@
 @import "variables";
 @import "mixins";
-@import 'rem';
+@import "pleaceholder";
+@import "rem";
 @import "root";
 @import "reboot";
-@import 'containers';
+@import "containers";
 @import "grid";
 @import "utills";
-@import 'shimmer';
-@import 'icons/icons';
+@import "shimmer";
+@import "icons/icons";
 
-
-
-.shimmer{
-&--topslider{
-    height:3.625rem;
+.shimmer {
+  &--topslider {
+    height: 3.625rem;
     width: 100%;
+  }
 }
-}
 
-.footer-shimmer{
-
-    width: toRem(200);
-
+.footer-shimmer {
+  width: toRem(200);
 }
 
 // @include media-breakpoint-up(sm){

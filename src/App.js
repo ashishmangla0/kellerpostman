@@ -6,6 +6,7 @@ import useFetch from './hooks/useFetch';
 import TopTextSlider from './components/footer/topTextSlider/TopTextSlider';
 import Header from './components/header/Header';
 import CaseHighlights from './components/caseHighlights/CaseHighlights';
+import Awards from './components/awards/Awards';
 
 function App() {
   const { response, error, loading } = useFetch(`${process.env.REACT_APP_API_URL}`);
@@ -19,6 +20,8 @@ function App() {
         <Header />
         <TopTextSlider data={response?.acf?.top_text_slider} />
         <CaseHighlights data={response?.acf?.case_section} />
+        <Awards data={response?.acf?.award_section}/>
+        
       </>}
 
       <div>

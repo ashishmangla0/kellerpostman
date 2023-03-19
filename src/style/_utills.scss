@@ -7,3 +7,19 @@
       .text#{$infix}-center { text-align: center !important; }
     }
   }
+.text-decoration-none{
+  text-decoration: none;
+}
+
+
+@for $i from 1 through 3 {
+  .line-clamp--#{$i} {
+    -webkit-line-clamp: #{$i};
+  }
+}
+
+.line-clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
