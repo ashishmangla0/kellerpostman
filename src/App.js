@@ -7,6 +7,7 @@ import CaseHighlights from "./components/caseHighlights/CaseHighlights";
 import Awards from "./components/awards/Awards";
 import Meta from "./components/meta/Meta";
 import Hero from "./components/hero/Hero";
+import Contact from "./components/contact/Contact";
 
 function App() {
   const { response, error, loading } = useFetch(
@@ -109,6 +110,7 @@ function App() {
           <Hero data={response?.acf?.home_hero_section} />
           <CaseHighlights data={response?.acf?.case_section} />
           <Awards data={response?.acf?.award_section} />
+<Contact/>
           <Footer />
         </>
       )}

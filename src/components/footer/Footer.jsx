@@ -161,7 +161,7 @@ const Footer = () => {
           <div className="row">
             <div className="col-12">
               <h2 className="footer__contact text-sm-center mobile-h2">
-                call us at <a href="tel:872-264-6677">872-264-6677</a>
+                Call us at <a href="tel:872-264-6677" className="footer__contact__link">872-264-6677</a>
               </h2>
             </div>
             <div className="col-md-3 footer__col col-sm-6">

@@ -73,8 +73,6 @@ img {
   }
 }
 
-
-
 @each $name, $value in $font-sizes {
   h#{$name} {
     font-size: #{$value};
@@ -99,7 +97,9 @@ img {
     @extend %font-weight-700;
   }
 }
-h1,.display,h2{
+h1,
+.display,
+h2 {
   letter-spacing: -1px;
 }
 
@@ -127,8 +127,6 @@ h1,.display,h2{
   @extend h6;
 }
 
-
-
 .h4--bold,
 .h5--bold,
 .display {
@@ -145,22 +143,30 @@ h4 {
 .h5-medium {
   font-weight: 500;
 }
-.block{
+.block {
   padding: toRem(50) 0;
 }
 
-
-.body{
-&-14{
-  font-size: toRem(14);
-  line-height: toRem(22);
-  &--bold{
-    font-weight: 700;
-    line-height: toRem(20);
+.body {
+  &-14 {
+    font-size: toRem(14);
+    line-height: toRem(22);
+    &--bold {
+      font-weight: 700;
+      line-height: toRem(20);
+    }
+    &--medium {
+      font-weight: 500;
+    }
   }
-  &--medium{
-    font-weight: 500;
+  &-18{
+    font-size: toRem(18);
+  line-height: toRem(30);
   }
-
 }
+a{
+  color: var(--blue-1);
+  &:hover{
+    color: var(--base-dark);
+  }
 }
