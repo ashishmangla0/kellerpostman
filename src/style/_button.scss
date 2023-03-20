@@ -1,0 +1,29 @@
+.button {
+  font-size: var(--body-font-size);
+  line-height: toRem(20);
+  font-weight: 700;
+  cursor: pointer;
+  padding: toRem(20) toRem(24);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  line-height: toRem(20);
+  text-transform: uppercase;
+  &--primary {
+    background: var(--blue-1);
+    color: var(--base-white);
+    &:hover {
+      background: var(--blue-2);
+      transition: .2s background cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+  }
+  &--link{
+    background: transparent;
+    padding: 0;
+    color: var(--teal-2);
+    &:hover{
+        color: var(--base-white);
+    }
+  }
+}

@@ -73,23 +73,7 @@ img {
   }
 }
 
-// @each $font-size, $value in $font-sizes {
-//   background: 'red';
-// }
 
-$font-sizes: (
-  1: $h1-font-size,
-  2: $h2-font-size,
-  3: $h3-font-size,
-  4: $h4-font-size,
-  5: $h5-font-size,
-  6: $h6-font-size,
-) !default;
-$icons: (
-  eye: "\f112",
-  start: "\f12e",
-  stop: "\f12f",
-);
 
 @each $name, $value in $font-sizes {
   h#{$name} {
@@ -115,6 +99,10 @@ $icons: (
     @extend %font-weight-700;
   }
 }
+h1,.display,h2{
+  letter-spacing: -1px;
+}
+
 .h1 {
   @extend h1;
 }
@@ -139,6 +127,8 @@ $icons: (
   @extend h6;
 }
 
+
+
 .h4--bold,
 .h5--bold,
 .display {
@@ -147,6 +137,7 @@ $icons: (
 
 .display {
   font-size: $display-font;
+  line-height: var(--disply-line-height);
 }
 h4 {
   font-weight: 400;
@@ -156,4 +147,20 @@ h4 {
 }
 .block{
   padding: toRem(50) 0;
+}
+
+
+.body{
+&-14{
+  font-size: toRem(14);
+  line-height: toRem(22);
+  &--bold{
+    font-weight: 700;
+    line-height: toRem(20);
+  }
+  &--medium{
+    font-weight: 500;
+  }
+
+}
 }

@@ -14,7 +14,7 @@ $teal-4: #20ce9c !default;
 $teal-5: #09ba87 !default;
 $blue-1: #1f61dd !default;
 $blue-2: #1955c5 !default;
-$blue-3: #1955c5 !default;
+$blue-3: #08265C !default;
 $blue-4: #0a1d40 !default;
 $base-dark: #0d1014 !default;
 
@@ -117,4 +117,24 @@ $font-sizes: (
   4: $h4-font-size,
   5: $h5-font-size,
   6: $h6-font-size,
+) !default;
+
+$mobile-display : $font-size-base * 2.5 !default;
+$mobile-h1 : $font-size-base * 2 !default;
+$mobile-h2 : $font-size-base * 1.75 !default;
+$mobile-h3 : $font-size-base * 1.5 !default;
+
+$mobile-fonts: (
+  "mobile-display": $mobile-display,
+  "mobile-h1": $mobile-h1,
+  "mobile-h2": $mobile-h2,
+  "mobile-h3": $mobile-h3,
+
+) !default;
+
+
+$primary:       $blue-1 !default;
+
+$theme-colors: (
+  "primary":    $primary
 ) !default;

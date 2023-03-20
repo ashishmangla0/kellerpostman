@@ -1,4 +1,3 @@
-import { Helmet } from "react-helmet";
 import Footer from "./components/footer/Footer";
 import useMedia from "./hooks/useMedia";
 import useFetch from "./hooks/useFetch";
@@ -7,6 +6,7 @@ import Header from "./components/header/Header";
 import CaseHighlights from "./components/caseHighlights/CaseHighlights";
 import Awards from "./components/awards/Awards";
 import Meta from "./components/meta/Meta";
+import Hero from "./components/hero/Hero";
 
 function App() {
   const { response, error, loading } = useFetch(
@@ -15,7 +15,7 @@ function App() {
 
   return (
     <>
-      <Meta data={response?.yoast_head_json}/>
+      <Meta data={response?.yoast_head}/>
       {loading ? (
         <div>
           <div className="shimmer shimmer--topslider"></div>
@@ -24,12 +24,15 @@ function App() {
         <>
           <Header />
           <TopTextSlider data={response?.acf?.top_text_slider} />
+          <Hero data={response?.acf?.home_hero_section}/>
           <CaseHighlights data={response?.acf?.case_section} />
           <Awards data={response?.acf?.award_section} />
         </>
       )}
       <Footer />
-      <div className="shimmer shimmer--topslider"></div>
+
+      <button className="button button--primary">a sfsdf dasf sdfsd</button>
+      
     </>
   );
 }

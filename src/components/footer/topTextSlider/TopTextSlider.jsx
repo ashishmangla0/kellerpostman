@@ -22,9 +22,7 @@ const TopTextSlider = (props) => {
           ))}
         </Slider>
         </div>
-
       </div>
-      <div>asd fsdf asdf df</div>
     </>
   );
 };

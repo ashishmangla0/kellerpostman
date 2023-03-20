@@ -12,14 +12,17 @@
     --base-#{$color}: #{$value};
   }
   --body-font-family: #{$font-family-base};
-  --body-font-size:  #{$font-size-base};
+  --body-font-size: #{$font-size-base};
   --body-font-weight: #{$font-weight-base};
   --body-line-height: #{toRem(26)};
 
-
+  --disply-line-height: #{toRem(91)};
 
   @each $name, $value in $grid-breakpoints {
     --#{$prefix}breakpoint-#{$name}: #{$value};
   }
 
+  @each $name, $value in $mobile-fonts {
+    --#{$name}: #{$value};
+  }
 }

@@ -1,0 +1,7 @@
+
+@include media-breakpoint-down(md){
+
+    .mobile-h2{
+        font-size: var(--mobile-h2);
+    }
+}

@@ -7,9 +7,10 @@
 @import "containers";
 @import "grid";
 @import "utills";
+@import "button";
 @import "shimmer";
 @import "icons/icons";
-
+@import 'mobile';
 .shimmer {
   &--topslider {
     height: 3.625rem;
@@ -20,9 +21,3 @@
 .footer-shimmer {
   width: toRem(200);
 }
-
-// @include media-breakpoint-up(sm){
-// body{
-//     background: green;
-// }
-// }

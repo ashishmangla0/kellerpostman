@@ -30,15 +30,14 @@ const Awards = (props) => {
         {
           breakpoint: 575,
           settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1
+            slidesToShow: 2,
+            slidesToScroll: 2
           }
         }
       ]
   };
 
   const { data } = props;
-  data.map((item) => console.log(item));
   return (
     <section className="block awards">
       <div className="container">
@@ -55,7 +54,7 @@ className="awards__image"
             />
 
             </div>
-          
+
 
 
           ))}

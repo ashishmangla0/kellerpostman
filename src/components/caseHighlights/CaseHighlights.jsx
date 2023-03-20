@@ -40,6 +40,7 @@ const CaseHighlights = (props) => {
             ))}
           </div>
         )}
+        <a className="button button--link" href={data?.link_url}>{data?.link_text}</a>
       </div>
     </section>
   );

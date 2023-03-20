@@ -10,6 +10,12 @@
 .text-decoration-none{
   text-decoration: none;
 }
+.text-uppercase{
+  text-transform: uppercase;
+}
+.text-capitalize{
+  text-transform: capitalize;
+}
 
 
 @for $i from 1 through 3 {

@@ -3,12 +3,13 @@
 @import '../../style/rem';
 .awards{
     &__image{
-        margin: o auto;
+        margin: 0 auto;
     }
     &__item{
         display: flex !important;
         align-items: center;
         justify-content: center;
         padding: toRem(27) 0;
+        min-height: tpRem(203);
     }
 }
