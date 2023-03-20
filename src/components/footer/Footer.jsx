@@ -4,15 +4,19 @@ import "./footer.scss";
 const deepFooterLinks = [
   {
     title: "Design by SPINX Digital",
+    link: "design-by-spinx-digital",
   },
   {
     title: "Terms",
+    link: "terms",
   },
   {
     title: "Privacy",
+     link: "privacy",
   },
   {
     title: "Legal Disclaimer",
+     link: "legal-disclaimer",
   },
 ];
 
@@ -39,20 +43,7 @@ const sitemap = [
     title: "Contact",
   },
 ];
-const featureCases = [
-  {
-    title: "about",
-  },
-  {
-    title: "our team",
-  },
-  {
-    title: "cases",
-  },
-  {
-    title: "practice areas",
-  },
-];
+
 
 const socialList = [
   {
@@ -169,9 +160,9 @@ const Footer = () => {
         <div className="container">
           <div className="row">
             <div className="col-12">
-              <div className="footer__contact text-sm-center">
+              <h2 className="footer__contact text-sm-center mobile-h2">
                 call us at <a href="tel:872-264-6677">872-264-6677</a>
-              </div>
+              </h2>
             </div>
             <div className="col-md-3 footer__col col-sm-6">
               <TitleList
@@ -180,7 +171,11 @@ const Footer = () => {
                 renderList={<RenderSitemap />}
                 listClasess={"footer__list"}
               />
-              {mediaType === "Desktop" && <div className="footer__social"><SocialMedia /></div>}
+              {mediaType === "Desktop" && (
+                <div className="footer__social">
+                  <SocialMedia />
+                </div>
+              )}
             </div>
             <div className="col-md-5 footer__col col-sm-6">
               <TitleList
@@ -208,13 +203,24 @@ const Footer = () => {
       </div>
       <div className="footer__bottom text-sm-center">
         <div className="container">
-          © {new Date().getFullYear()} Keller Postman LLC. All rights reserved.
-          <ul>
-            {deepFooterLinks.map((deeplink) => (
-              <li>{deeplink.title}</li>
-            ))}
-          </ul>
-          <p>
+          <div className="footer__bottom__copy">
+            <div>
+              &copy; {new Date().getFullYear()} Keller Postman LLC. All rights
+              reserved.
+            </div>
+
+            <ul className="footer__bottom__list">
+              {deepFooterLinks.map((deeplink,index) => (
+                <li className={`footer__bottom__item ${index + 1 === 1 ? 'footer__bottom__first':''}`}>
+                  <a className="footer__bottom__link" href={deeplink.link}>
+                    {deeplink.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <p className="footer__bottom__recaptcha">
             This site is protected by reCAPTCHA and the Google Privacy Policy
             and Terms of Service apply.
           </p>
