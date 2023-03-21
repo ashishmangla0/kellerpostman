@@ -27,7 +27,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+.icon-arrow-down {
+  &:before {
+    content: $icon-arrow-down;
+  }
+}
 .icon-privacy {
   &:before {
     content: $icon-privacy;

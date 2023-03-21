@@ -1,0 +1,41 @@
+@import "../../style/variables";
+@import "../../style/mixins";
+@import "../../style/rem";
+
+.form {
+  &__textarea {
+    border: 1px solid var(--gray-3);
+    border-radius: 0;
+    width: 100%;
+    padding: toRem(16) toRem(14);
+    font-size: toRem(16);
+    line-height: toRem(26);
+    font-family: var(--body-font-family);
+    background: var(--base-white);
+    cursor: pointer;
+    &:focus {
+      + .form__input__lable {
+        transform: translate(0, -9px) scale(0.6923);
+      }
+    }
+    &__group {
+      position: relative;
+      margin-bottom: toRem(20);
+    }
+    &__lable {
+      position: absolute;
+      color: rgba(13, 16, 20, 0.6);
+      display: block;
+      left: 0;
+      top: 1.0625rem;
+      padding-left: 14px;
+      font-family: var(--body-font-family);
+      pointer-events: none;
+      transition: all 0.1s ease-in-out;
+      transform-origin: top left;
+      &.filled{
+        transform: translate(0, -9px) scale(.6923);
+      }
+    }
+  }
+}
