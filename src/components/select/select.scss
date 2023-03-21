@@ -11,9 +11,11 @@
     width: 100%;
     top: 100%;
     padding: toRem(4) 0;
+    z-index: 1001;
   }
   &__item {
     padding: toRem(8) toRem(14);
     color: var(--base-dark);
+    cursor: pointer;
   }
 }

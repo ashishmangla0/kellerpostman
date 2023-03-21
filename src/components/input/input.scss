@@ -23,6 +23,8 @@
     &__group {
       position: relative;
       margin-bottom: toRem(20);
+      font-size: 0;
+      list-style: initial;
 
     }
     &__label {

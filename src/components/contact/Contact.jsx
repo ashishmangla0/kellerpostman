@@ -100,14 +100,12 @@ const Contact = () => {
                   />
                 </div>
                 <div className="col-md-6">
-                  <Input
-                    label={"Phone Number"}
-                    inputType="tel"
-                    inputId="phone_number"
-                    name={"phone_number"}
-                    value={contactFormValues.phone_number}
-                    handleChange={handleFormChange}
-                  />
+                <Select
+                placeHolder={"Select Case"}
+                selectId={"select_case"}
+                dropdownValues={FilterCases}
+                selectedValue={contactFormValues.select_case}
+              />
                 </div>
               </div>
               <Textarea
@@ -118,13 +116,7 @@ const Contact = () => {
                 handleChange={handleFormChange}
                 value={contactFormValues.describe}
               />
-
-              <Select
-                placeHolder={"Select Case"}
-                selectId={"select_case"}
-                dropdownValues={FilterCases}
-                selectedValue={contactFormValues.select_case}
-              />
+              
               <button type="submit" className="button button--primary">
                 Submit free case evaluation
               </button>

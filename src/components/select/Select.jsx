@@ -36,6 +36,7 @@ const Select = (props) => {
 
   const handleItemClick = (e) => {
     console.log(e);
+    handleToggle();
   };
   return (
     <div className={`select ${selectWrapClasses}`}>
