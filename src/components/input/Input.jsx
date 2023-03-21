@@ -3,7 +3,7 @@ import { string, oneOf, func } from "prop-types";
 import './input.scss'
 
 const Input = (props) => {
-  const { lable, inputId, inputType,classes, wrapperClasses,handleChange,value ,name} =
+  const { label, inputId, inputType,classes, wrapperClasses,handleChange,value ,name} =
     props;
 
   return (
@@ -16,7 +16,7 @@ const Input = (props) => {
         onChange={handleChange}
         value={value}
       />
-      {lable && <label for={inputId} className={`form__input__lable ${value && 'filled'}`}>{lable}</label>}
+      {label && <label htmlFor={inputId} className={`form__input__label ${value && 'filled'}`}>{label}</label>}
     </div>
   );
 };
@@ -24,7 +24,7 @@ Input.propTypes = {
   inputType: oneOf(["text", "password", "tel", "email"]),
   inputId: string,
   handleChange: func,
-  lable: string,
+  label: string,
   classes: string,
   wrapperClasses: string,
 };

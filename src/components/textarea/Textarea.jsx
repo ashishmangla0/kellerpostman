@@ -3,7 +3,7 @@ import { string, oneOf, func } from "prop-types";
 import './textarea.scss'
 
 const Textarea = (props) => {
-  const { lable, inputId, inputType, handleChange, classes, wrapperClasses,rows,value,name} =
+  const { label, inputId, inputType, handleChange, classes, wrapperClasses,rows,value,name} =
     props;
   return (
     <div className={`form__input__group ${wrapperClasses}`}>
@@ -16,7 +16,7 @@ const Textarea = (props) => {
         className={`form__textarea ${classes}`}
         rows={rows}
       />
-      {lable && <label for={inputId} className={`form__input__lable ${value && 'filled'}`}>{lable}</label>}
+      {label && <label htmlFor={inputId} className={`form__input__label ${value && 'filled'}`}>{label}</label>}
     </div>
   );
 };
@@ -24,7 +24,7 @@ Textarea.propTypes = {
   inputType: oneOf(["text", "password", "tel", "email"]),
   inputId: string,
   handleChange: func,
-  lable: string,
+  label: string,
   classes: string,
   wrapperClasses: string,
 };

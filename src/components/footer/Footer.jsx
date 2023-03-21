@@ -12,38 +12,44 @@ const deepFooterLinks = [
   },
   {
     title: "Privacy",
-     link: "privacy",
+    link: "privacy",
   },
   {
     title: "Legal Disclaimer",
-     link: "legal-disclaimer",
+    link: "legal-disclaimer",
   },
 ];
 
 const sitemap = [
   {
     title: "About",
+    link: "/about",
   },
   {
     title: "Our Team",
+    link: "/our-team",
   },
   {
     title: "Cases",
+    link: "/cases",
   },
   {
     title: "Practice Areas",
+    link: "/practice-areas",
   },
   {
     title: "News & Insights",
+    link: "/new-insights",
   },
   {
     title: "Careers",
+    link: "/careers",
   },
   {
     title: "Contact",
+    link: "/contact",
   },
 ];
-
 
 const socialList = [
   {
@@ -86,8 +92,10 @@ const RenderSitemap = () => {
   return (
     <>
       {sitemap.map((item) => (
-        <li className="footer__item footer__item--sitemap">
-          <a className="footer__link text-capitalize body-14">{item.title}</a>
+        <li className="footer__item footer__item--sitemap" key={item.title}>
+          <a className="footer__link text-capitalize body-14" href={item.link}>
+            {item.title}
+          </a>
         </li>
       ))}
     </>
@@ -98,7 +106,7 @@ const RenderOffice = () => {
   return (
     <>
       {offices.map((office) => (
-        <li className="footer__item footer__item--address">
+        <li className="footer__item footer__item--address" key={office.title}>
           <strong className="footer__address-title body-14 body-14--bold">
             {office.title}
           </strong>
@@ -161,7 +169,10 @@ const Footer = () => {
           <div className="row">
             <div className="col-12">
               <h2 className="footer__contact text-sm-center mobile-h2">
-                Call us at <a href="tel:872-264-6677" className="footer__contact__link">872-264-6677</a>
+                Call us at{" "}
+                <a href="tel:872-264-6677" className="footer__contact__link">
+                  872-264-6677
+                </a>
               </h2>
             </div>
             <div className="col-md-3 footer__col col-sm-6">
@@ -210,8 +221,12 @@ const Footer = () => {
             </div>
 
             <ul className="footer__bottom__list">
-              {deepFooterLinks.map((deeplink,index) => (
-                <li className={`footer__bottom__item ${index + 1 === 1 ? 'footer__bottom__first':''}`}>
+              {deepFooterLinks.map((deeplink, index) => (
+                <li
+                  className={`footer__bottom__item ${
+                    index + 1 === 1 ? "footer__bottom__first" : ""
+                  }`}
+                >
                   <a className="footer__bottom__link" href={deeplink.link}>
                     {deeplink.title}
                   </a>
@@ -219,7 +234,6 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-
           <p className="footer__bottom__recaptcha">
             This site is protected by reCAPTCHA and the Google Privacy Policy
             and Terms of Service apply.

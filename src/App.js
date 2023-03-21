@@ -13,6 +13,9 @@ function App() {
   const { response, error, loading } = useFetch(
     `${process.env.REACT_APP_API_URL}`
   );
+
+
+
   const mediaType = useMedia();
   return (
     <>
@@ -111,7 +114,7 @@ function App() {
           <CaseHighlights data={response?.acf?.case_section} />
           <Awards data={response?.acf?.award_section} />
 <Contact/>
-          <Footer />
+          <Footer/>
         </>
       )}
     </>

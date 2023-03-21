@@ -14,7 +14,7 @@
     background: var(--base-white);
     cursor: pointer;
     &:focus {
-      + .form__input__lable {
+      + .form__input__label {
         transform: translate(0, -9px) scale(0.6923);
       }
     }
@@ -22,7 +22,7 @@
       position: relative;
       margin-bottom: toRem(20);
     }
-    &__lable {
+    &__label {
       position: absolute;
       color: rgba(13, 16, 20, 0.6);
       display: block;
