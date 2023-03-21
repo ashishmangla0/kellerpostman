@@ -1,0 +1,19 @@
+@import "../../style/variables";
+@import "../../style/mixins";
+@import "../../style/rem";
+.select {
+  position: relative;
+  &__list {
+    position: absolute;
+    background: var(--base-white);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    margin-top: toRem(4);
+    width: 100%;
+    top: 100%;
+    padding: toRem(4) 0;
+  }
+  &__item {
+    padding: toRem(8) toRem(14);
+    color: var(--base-dark);
+  }
+}

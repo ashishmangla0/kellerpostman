@@ -5,18 +5,24 @@ import {
   number,
   shape,
   arrayOf,
-  selectedValue
+  selectedValue,
 } from "prop-types";
 import { useState } from "react";
 
 import "./select.scss";
 
 const Select = (props) => {
-  const { selectedValue, placeHolder, selectId, handleClick, dropdownValues } =
-    props;
+  const {
+    selectWrapClasses,
+    selectedValue,
+    placeHolder,
+    selectId,
+    handleClick,
+    dropdownValues,
+  } = props;
   const [isOpen, setIsOpen] = useState(false);
 
-console.log(selectedValue);
+  console.log(selectedValue);
 
   const handleToggle = () => {
     setIsOpen(!isOpen);
@@ -28,11 +34,11 @@ console.log(selectedValue);
     }
   };
 
-  const handleItemClick = (e) =>{
-console.log(e);
-  }
+  const handleItemClick = (e) => {
+    console.log(e);
+  };
   return (
-    <div>
+    <div className={`select ${selectWrapClasses}`}>
       <button
         className="form__input "
         type="button"
@@ -41,16 +47,24 @@ console.log(e);
         id={selectId}
         onClick={handleButtonClick}
       >
-      {selectedValue === '' ? placeHolder : selectedValue }
+        {selectedValue === "" ? placeHolder : selectedValue}
         <i className="icon icon-arrow-down"></i>
       </button>
-
-      <ul aria-labelledby={selectId}>
-
-        {dropdownValues?.map((dropdownValue) => <li role={"option"} onClick={(e) => handleItemClick(e)}>
-{dropdownValue.label}
-        </li>)}
-      </ul>
+      {isOpen && (
+        <ul aria-labelledby={selectId} className={"select__list"}>
+          {dropdownValues?.map((dropdownValue) => (
+            <li
+              tabIndex={"0"}
+              role={"option"}
+              onClick={(e) => handleItemClick(e)}
+              key={dropdownValue.label}
+              className="select__item body-14"
+            >
+              {dropdownValue.label}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };

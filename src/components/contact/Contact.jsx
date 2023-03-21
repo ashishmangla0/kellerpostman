@@ -20,8 +20,7 @@ const Contact = () => {
     { label: "3M Combat Arms Earplugs Litigation" },
     { label: "Acetaminophen Litigation" },
     { label: "Zantac Litigation" },
-    { label: "Paragard IUD Litigation" },
-    {},
+    { label: "Paragard IUD Litigation" }
   ];
 
   const [contactFormValues, setContactFormValues] =
@@ -32,7 +31,9 @@ const Contact = () => {
     setContactFormValues({ ...contactFormValues, [name]: value });
   };
 
-  const handleSubmit = (e) => {};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
 
   return (
     <section className="contact">
