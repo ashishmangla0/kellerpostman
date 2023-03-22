@@ -58,6 +58,12 @@
   }
 
   &__item {
+    &--feature{
+
+      &:not(:last-child){
+        margin-bottom: toRem(16);
+      }
+    }
     &--address {
       &:not(:last-child) {
         margin-bottom: toRem(28);
@@ -74,6 +80,7 @@
         margin-right: toRem(32);
       }
     }
+
   }
 
   &__col {

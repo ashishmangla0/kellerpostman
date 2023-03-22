@@ -11,7 +11,7 @@ const Contact = () => {
     phone_number: "",
     zip_code: "",
     describe: "",
-    select_case:""
+    select_case: "",
   };
 
   const FilterCases = [
@@ -20,7 +20,7 @@ const Contact = () => {
     { label: "3M Combat Arms Earplugs Litigation" },
     { label: "Acetaminophen Litigation" },
     { label: "Zantac Litigation" },
-    { label: "Paragard IUD Litigation" }
+    { label: "Paragard IUD Litigation" },
   ];
 
   const [contactFormValues, setContactFormValues] =
@@ -29,6 +29,9 @@ const Contact = () => {
   const handleFormChange = (e) => {
     const { name, value } = e.target;
     setContactFormValues({ ...contactFormValues, [name]: value });
+  };
+  const handleSelectChange = (value) => {
+    setContactFormValues({ ...contactFormValues, select_case: value });
   };
 
   const handleSubmit = (e) => {
@@ -100,15 +103,17 @@ const Contact = () => {
                   />
                 </div>
                 <div className="col-md-6">
-                <Select
-                placeHolder={"Select Case"}
-                selectId={"select_case"}
-                dropdownValues={FilterCases}
-                selectedValue={contactFormValues.select_case}
-              />
+                  <Select
+                    handleClick={handleSelectChange}
+                    placeHolder={"Select Case"}
+                    selectId={"select_case"}
+                    dropdownValues={FilterCases}
+                    selectedValue={contactFormValues.select_case}
+                  />
                 </div>
               </div>
               <Textarea
+                wrapperClasses={"contact__textarea"}
                 label={"Describe Your Issue"}
                 rows={3}
                 name={"describe"}
@@ -116,13 +121,20 @@ const Contact = () => {
                 handleChange={handleFormChange}
                 value={contactFormValues.describe}
               />
-              
-              <button type="submit" className="button button--primary">
+
+              <button
+                type="submit"
+                className="button button--primary contact__action"
+              >
                 Submit free case evaluation
               </button>
             </form>
-            <p className="contact__right__">
-              By submitting, you agree to our Terms & Privacy Policy.
+            <p className="contact__agree body-14">
+              By submitting, you agree to our{" "}
+              <span>
+                <a href="./terms">Terms</a> &{" "}
+                <a href="./privacy">Privacy Policy</a>.
+              </span>
             </p>
           </div>
         </div>

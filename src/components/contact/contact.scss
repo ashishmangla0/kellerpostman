@@ -33,6 +33,23 @@
         min-height: toRem(397.5);
     }
   }
+  &__textarea{
+    margin-bottom: toRem(32);
+  }
+  &__action{
+    margin-bottom: toRem(10);
+    @include media-breakpoint-up(md) {
+        margin-bottom: toRem(40);
+      }
+  }
+  &__agree{
+    color: var(--gray-7);
+    margin: 0;
+
+    span,a{
+        color:var(--blue-4) ;
+    }
+  }
   @include media-breakpoint-down(sm) {
     padding-left: toRem(16);
     padding-right: toRem(16);

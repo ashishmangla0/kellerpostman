@@ -4,7 +4,7 @@
 
 .form {
   &__input {
-    border: 1px solid var(--gray-3);
+    border: 1px solid var(--gray-4);
     border-radius: 0;
     width: 100%;
     padding: toRem(16) toRem(14);
@@ -14,6 +14,9 @@
     height: toRem(60);
     background: var(--base-white);
     cursor: pointer;
+    &:hover{
+        background: var(--gray-1)
+    }
 
     &:focus{
         + .form__input__label{
@@ -23,9 +26,6 @@
     &__group {
       position: relative;
       margin-bottom: toRem(20);
-      font-size: 0;
-      line-height: initial;
-
     }
     &__label {
       position: absolute;

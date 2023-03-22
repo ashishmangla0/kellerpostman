@@ -3,6 +3,22 @@
 @import "../../style/rem";
 .select {
   position: relative;
+  &__icon{
+    position: absolute;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top:0;
+    right: 0;
+    bottom: 0;
+  }
+  &__button{
+    padding-right: toRem(40);
+    text-align: left;
+    color: var(--base-dark);
+  }
+
   &__list {
     position: absolute;
     background: var(--base-white);
@@ -17,5 +33,11 @@
     padding: toRem(8) toRem(14);
     color: var(--base-dark);
     cursor: pointer;
+  }
+  &__value{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
   }
 }

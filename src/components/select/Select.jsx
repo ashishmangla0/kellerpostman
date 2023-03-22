@@ -5,9 +5,8 @@ import {
   number,
   shape,
   arrayOf,
-  selectedValue,
 } from "prop-types";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import "./select.scss";
 
@@ -22,7 +21,23 @@ const Select = (props) => {
   } = props;
   const [isOpen, setIsOpen] = useState(false);
 
-  console.log(selectedValue);
+  const dropdownMenuRef = useRef(null);
+  useEffect(() => {
+    if (isOpen) {
+      const handleClickOutside = (event) => {
+        if (
+          dropdownMenuRef.current &&
+          !dropdownMenuRef.current.contains(event.target)
+        ) {
+          handleToggle();
+        }
+      };
+      document.addEventListener("click", handleClickOutside, true);
+      return () => {
+        document.removeEventListener("click", handleClickOutside, true);
+      };
+    }
+  }, [isOpen]);
 
   const handleToggle = () => {
     setIsOpen(!isOpen);
@@ -30,26 +45,32 @@ const Select = (props) => {
   const handleButtonClick = () => {
     handleToggle();
     if (handleClick) {
-      handleClick();
+      handleClick( selectedValue);
     }
   };
 
-  const handleItemClick = (e) => {
-    console.log(e);
+  const handleItemClick = (value) => {
+    console.log(value);
     handleToggle();
+    handleClick(value);
   };
+
   return (
-    <div className={`select ${selectWrapClasses}`}>
+    <div className={`select ${selectWrapClasses}`} ref={dropdownMenuRef}>
       <button
-        className="form__input "
+        className="form__input select__button"
         type="button"
         aria-haspopup="true"
         aria-expanded={isOpen}
         id={selectId}
         onClick={handleButtonClick}
       >
-        {selectedValue === "" ? placeHolder : selectedValue}
-        <i className="icon icon-arrow-down"></i>
+        <span className="select__value" aria-live="polite">
+          {selectedValue === "" ? placeHolder : selectedValue}
+        </span>
+        <span className="select__icon">
+          <i className="icon icon-arrow-down"></i>
+        </span>
       </button>
       {isOpen && (
         <ul aria-labelledby={selectId} className={"select__list"}>
@@ -57,7 +78,7 @@ const Select = (props) => {
             <li
               tabIndex={"0"}
               role={"option"}
-              onClick={(e) => handleItemClick(e)}
+              onClick={() => handleItemClick(dropdownValue.label)}
               key={dropdownValue.label}
               className="select__item body-14"
             >
@@ -74,6 +95,7 @@ Select.propTypes = {
   selectId: string,
   selectedValue: oneOfType([string, number]),
   placeHolder: string,
+  selectWrapClasses: string,
   dropdownValues: arrayOf(
     shape({
       label: oneOfType([string, number]),
@@ -85,6 +107,7 @@ Select.propTypes = {
   handleClick: func,
 };
 Select.defaultProps = {
+    selectWrapClasses: '',
   selectId: "",
   selectedValue: "",
   placeHolder: "",

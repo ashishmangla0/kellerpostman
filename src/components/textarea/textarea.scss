@@ -13,6 +13,9 @@
     font-family: var(--body-font-family);
     background: var(--base-white);
     cursor: pointer;
+    &:hover{
+      background: var(--gray-1)
+  }
     &:focus {
       + .form__input__label {
         transform: translate(0, -9px) scale(0.6923);
