@@ -1,3 +1,60 @@
-.header{
-    background: var(--base-dark);
+@import "../../style/variables";
+@import "../../style/pleaceholder";
+@import "../../style/mixins";
+@import "../../style/rem";
+.header {
+  background: var(--base-dark);
+  &__container {
+    @extend %d-flex;
+    justify-content: space-between;
+    align-items: center;
+    @include media-breakpoint-up(xxl) {
+      padding-left: calc((100% - 1296px) / 2);
+    }
+  }
+  &__nav {
+    &-button {
+      border: none;
+      background: var(--base-dark);
+      color: var(--base-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-flow: column wrap;
+      height: toRem(88);
+      width: toRem(100);
+      padding: 0;
+      cursor: pointer;
+      &:hover {
+        background: var(--blue-3);
+      }
+      span {
+        width: toRem(28);
+        height: toRem(3);
+        @extend %d-flex;
+        background: var(--base-white);
+        border-radius: 0;
+        &:not(:last-child) {
+          margin-bottom: toRem(4);
+        }
+      }
+    }
+  }
+  &__right{
+    @extend %d-flex;
+  }
+}
+.nav{
+    &__link{
+        &--button{
+            border-bottom: 4px solid var(--teal-4);
+            color: var(--base-white);
+            background: var(--blue-1);
+            height: toRem(88);
+            &:hover{
+                background: var(--blue-2);
+                color: var(--base-white);
+            }
+        }
+    }
 }
