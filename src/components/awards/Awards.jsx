@@ -1,6 +1,6 @@
 import Slider from "react-slick";
 
-import './awards.scss';
+import "./awards.scss";
 
 const Awards = (props) => {
   const settings = {
@@ -11,30 +11,30 @@ const Awards = (props) => {
     slidesToScroll: 5,
     arrows: false,
     responsive: [
-        {
-          breakpoint: 992,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            infinite: true,
-            dots: true
-          }
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
         },
-        {
-          breakpoint: 768,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2
-          }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
         },
-        {
-          breakpoint: 575,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2
-          }
-        }
-      ]
+      },
+      {
+        breakpoint: 575,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+    ],
   };
 
   const { data } = props;
@@ -43,20 +43,15 @@ const Awards = (props) => {
       <div className="container">
         <Slider {...settings}>
           {data?.map((award) => (
-
-            <div className="awards__item">
-            <img
-              src={award?.select_award?.sizes?.thumbnail}
-              alt={award?.select_award?.title}
-              width={award?.select_award?.sizes?.['thumbnail-width']}
-              height={award?.select_award?.sizes?.['thumbnail-height']}
-className="awards__image"
-            />
-
+            <div className="awards__item" key={award?.select_award?.title}>
+              <img
+                src={award?.select_award?.sizes?.thumbnail}
+                alt={award?.select_award?.title}
+                width={award?.select_award?.sizes?.["thumbnail-width"]}
+                height={award?.select_award?.sizes?.["thumbnail-height"]}
+                className="awards__image"
+              />
             </div>
-
-
-
           ))}
         </Slider>
       </div>

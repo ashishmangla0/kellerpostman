@@ -10,6 +10,9 @@
         align-items: center;
         justify-content: center;
         padding: toRem(27) 0;
-        min-height: tpRem(203);
+
+        @include media-breakpoint-up(md) {
+            min-height: toRem(204);
+          }
     }
 }

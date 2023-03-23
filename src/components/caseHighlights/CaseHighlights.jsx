@@ -32,9 +32,9 @@ const CaseHighlights = (props) => {
       <div className="container">
         <h2 tabIndex={'0'} className="casehighlights__title" >{data.title}</h2>
         {data?.home_cases?.length > 0 && (
-          <div className="row  gx-sm-5">
+          <div className="row  gx-sm-5" >
             {dataWithDummyText?.map((homeCase) => (
-              <div className="col-12 col-sm-6 col-md-6 col-lg-4 casehighlights__item">
+              <div className="col-12 col-sm-6 col-md-6 col-lg-4 casehighlights__item" key={homeCase?.post_title}>
                 <ActiveCaseCard title={homeCase?.post_title} description={homeCase?.description} link={homeCase?.post_name} cardClassess={'casehighlights__card'} />
               </div>
             ))}
