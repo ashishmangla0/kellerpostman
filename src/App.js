@@ -25,7 +25,7 @@ function App() {
         </>
       ) : (
         <>
-          <Header />
+          <Header data={response?.acf?.case_section}/>
           <TopTextSlider data={response?.acf?.top_text_slider} />
           <Hero data={response?.acf?.home_hero_section} />
           <CaseHighlights data={response?.acf?.case_section} />

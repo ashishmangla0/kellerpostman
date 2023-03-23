@@ -17,8 +17,8 @@ const TopTextSlider = (props) => {
       <div className="toptextslider">
         <div className="container">
         <Slider {...settings}>
-          {data?.map((text) => (
-            <div dangerouslySetInnerHTML={{ __html: text.add_text }} />
+          {data?.map((text,index) => (
+            <div dangerouslySetInnerHTML={{ __html: text.add_text }} key={index} />
           ))}
         </Slider>
         </div>

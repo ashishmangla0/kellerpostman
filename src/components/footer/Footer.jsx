@@ -246,6 +246,7 @@ const Footer = ({ caseLinks, viewCases }) => {
             <ul className="footer__bottom__list">
               {deepFooterLinks.map((deeplink, index) => (
                 <li
+                key={deeplink.title}
                   className={`footer__bottom__item ${index + 1 === 1 ? "footer__bottom__first" : ""
                     }`}
                 >

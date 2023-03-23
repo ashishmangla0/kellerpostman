@@ -31,7 +31,7 @@ const CaseHighlights = (props) => {
     <section className="block casehighlights">
       <div className="container">
         <h2 tabIndex={'0'} className="casehighlights__title" >{data.title}</h2>
-        {data.home_cases.length > 0 && (
+        {data?.home_cases?.length > 0 && (
           <div className="row  gx-sm-5">
             {dataWithDummyText?.map((homeCase) => (
               <div className="col-12 col-sm-6 col-md-6 col-lg-4 casehighlights__item">
