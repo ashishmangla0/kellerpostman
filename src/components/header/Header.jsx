@@ -1,11 +1,11 @@
 import "./header.scss";
 
 import logo from "../../resources/logowhite.svg";
+import Cases from "../cases/cases";
 // import Cases from "../cases/cases";
 
 const Header = (props) => {
   const { data } = props;
-  console.log(data);
   return (
     <header className="header">
       <div className="header__container">
@@ -27,12 +27,19 @@ const Header = (props) => {
                   tabIndex={0}
                   aria-expanded={false}
                 >
-                  cases
+                <span>cases</span>
+                <i className="icon icon-chevron-down"></i>
                 </a>
-                {/* <Cases data={data}/> */}
-                <ul className="dropdown__list"></ul>
+                <Cases
+                  data={data?.home_cases}
+                  caseLinkText={data?.link_text}
+                  caseLinkUrl={data?.link_url}
+                  classWrap={'nav__sub-menu'}
+                  itemClass={'nav__sub-item'}
+                />
+
               </li>
-              <li>
+              <li className="nav__item">
                 <a
                   className="nav__link nav__link--button button"
                   href=""

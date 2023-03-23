@@ -163,10 +163,27 @@ h4 {
     font-size: toRem(18);
   line-height: toRem(30);
   }
+  &-12{
+    font-size: toRem(12);
+  line-height: toRem(18);
+  &--medium{
+    font-weight: 500;
+  }
+  &--semibold{
+    font-weight: 600;
+  }
+
+  &--bold{
+    font-weight: 700;
+  }
+  }
 }
 a{
   color: var(--blue-1);
   &:hover{
     color: var(--base-dark);
   }
+}
+b,strong{
+  font-weight: 700;
 }

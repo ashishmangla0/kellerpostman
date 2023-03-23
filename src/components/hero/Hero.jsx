@@ -4,7 +4,6 @@ import "./hero.scss";
 
 const Hero = (props) => {
   const { data } = props;
-  console.log(data);
   const mediaType = useMedia();
 
   return (

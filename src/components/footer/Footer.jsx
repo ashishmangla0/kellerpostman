@@ -93,7 +93,10 @@ const RenderSitemap = () => {
     <>
       {sitemap.map((item) => (
         <li className="footer__item footer__item--sitemap" key={item.title}>
-          <a className="footer__link text-capitalize body-14 body-14--medium" href={item.link}>
+          <a
+            className="footer__link text-capitalize body-14 body-14--medium"
+            href={item.link}
+          >
             {item.title}
           </a>
         </li>
@@ -124,7 +127,10 @@ const RenderSocialLinks = () => {
   return (
     <>
       {socialList.map((socialItem) => (
-        <li className="footer__item footer__item--social" key={socialItem.title}>
+        <li
+          className="footer__item footer__item--social"
+          key={socialItem.title}
+        >
           <a
             className="footer__link footer__link--social"
             href={socialItem.link}
@@ -162,25 +168,27 @@ const SocialMedia = () => {
 
 const RenderCasesTitles = (props) => {
   const { caseLinks, viewCases } = props;
-  console.log(caseLinks);
   return (
     <>
       {caseLinks?.map((item) => (
-        <li className="footer__item footer__item--feature" key={item.post_title}>
-          <a className="footer__link text-capitalize body-14" href={item.post_name}>
+        <li
+          className="footer__item footer__item--feature"
+          key={item.post_title}
+        >
+          <a
+            className="footer__link text-capitalize body-14"
+            href={item.post_name}
+          >
             {item.post_title}
           </a>
         </li>
       ))}
       <li className="footer__item footer__item--feature">
-        <a className="footer__link text-capitalize body-14">
-          {viewCases}
-        </a>
+        <a className="footer__link text-capitalize body-14" href="">{viewCases}</a>
       </li>
     </>
-  )
-
-}
+  );
+};
 
 const Footer = ({ caseLinks, viewCases }) => {
   console.log(caseLinks);
@@ -216,7 +224,12 @@ const Footer = ({ caseLinks, viewCases }) => {
               <TitleList
                 title="feature cases"
                 titleClasess={"footer__title text-uppercase"}
-                renderList={<RenderCasesTitles viewCases={viewCases} caseLinks={caseLinks?.home_cases} />}
+                renderList={
+                  <RenderCasesTitles
+                    viewCases={viewCases}
+                    caseLinks={caseLinks?.home_cases}
+                  />
+                }
                 listClasess={"footer__list"}
               />
             </div>
@@ -246,9 +259,10 @@ const Footer = ({ caseLinks, viewCases }) => {
             <ul className="footer__bottom__list">
               {deepFooterLinks.map((deeplink, index) => (
                 <li
-                key={deeplink.title}
-                  className={`footer__bottom__item ${index + 1 === 1 ? "footer__bottom__first" : ""
-                    }`}
+                  key={deeplink.title}
+                  className={`footer__bottom__item ${
+                    index + 1 === 1 ? "footer__bottom__first" : ""
+                  }`}
                 >
                   <a className="footer__bottom__link" href={deeplink.link}>
                     {deeplink.title}
