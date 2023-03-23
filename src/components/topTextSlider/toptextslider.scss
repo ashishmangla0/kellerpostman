@@ -1,0 +1,16 @@
+.toptextslider{
+    background: var(--blue-4);
+    padding: 1rem 0;
+    color: var(--base-white);
+    &__item{
+        a{
+            color: var(--teal-2);
+            font-size: var(--body-font-size);
+    font-weight: 700;
+    line-height: 20px;
+    &:hover{
+      color: var(--base-white);
+    }
+        }
+    }
+}
