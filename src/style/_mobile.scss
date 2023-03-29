@@ -1,8 +1,15 @@
 
 @include media-breakpoint-down(md){
+    .mobile{
+        &-display{
+font-size: var(--mobile-display);
+line-height: 46px;
+        }
+        &-h2{
+            font-size: var(--mobile-h2);
+            line-height: toRem(38);
+        }
 
-    .mobile-h2{
-        font-size: var(--mobile-h2);
-        line-height: toRem(38);
     }
+
 }

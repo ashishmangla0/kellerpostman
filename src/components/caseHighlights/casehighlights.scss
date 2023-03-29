@@ -20,4 +20,29 @@
         }
 
     }
+    &__item{
+        &:not(:last-child){
+            margin-bottom: toRem(48);
+        }
+        &:last-child{
+            margin-bottom: toRem(30);
+        }
+        @include media-breakpoint-up(sm) {
+            &:not(:nth-last-child(-n+ 2)){
+                margin-bottom: toRem(48);
+            }
+            &:nth-last-child(-n+2){
+                margin-bottom: toRem(30);
+            }
+        }
+        @include media-breakpoint-up(lg) {
+            &:not(:nth-last-child(-n+ 3)){
+                margin-bottom: toRem(48);
+            }
+            &:nth-last-child(-n+3){
+                margin-bottom: toRem(40);
+            }
+
+        }
+    }
 }

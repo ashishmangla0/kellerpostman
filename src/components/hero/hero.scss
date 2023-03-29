@@ -6,26 +6,41 @@
   display: flex;
   min-height: toRem(500);
   background: var(--gray-1);
-//   height: toRem(620);
+  position: relative;
+  overflow: hidden;
+  &__desc {
+    color: var(--gray-2);
+    padding-bottom: toRem(32);
     position: relative;
-    overflow: hidden;
-    &__container{
-        position: relative;
-        z-index: 3;
+    &::after {
+      position: absolute;
+      bottom: 0;
+      content: "";
+      width: 60px;
+      height: 4px;
+      background: var(--teal-4);
+      left: 0;
     }
-&__bg{
-   &::before{
-    content:'';
-    inset: 0;
-    position: absolute;
-    z-index: 2;
-    background: linear-gradient(90deg, rgba(20, 27, 35, 0.4) 0%, rgba(20, 27, 36, 0.9) 100%);
-mix-blend-mode: normal;
-transform: rotate(-180deg);
-   }
-}
-
-
+  }
+  &__container {
+    position: relative;
+    z-index: 3;
+  }
+  &__bg {
+    &::before {
+      content: "";
+      inset: 0;
+      position: absolute;
+      z-index: 2;
+      background: linear-gradient(
+        90deg,
+        rgba(20, 27, 35, 0.4) 0%,
+        rgba(20, 27, 36, 0.9) 100%
+      );
+      mix-blend-mode: normal;
+      transform: rotate(-180deg);
+    }
+  }
 
   &__img {
     position: absolute;
@@ -53,29 +68,29 @@ transform: rotate(-180deg);
       margin: 0;
     }
   }
-  &__content{
+  &__content {
     position: relative;
     z-index: 3;
     color: var(--base-white);
   }
 }
 
- @include media-breakpoint-up(lg) {
+@include media-breakpoint-up(lg) {
   .hero {
-    &__bg{
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    max-width: calc(75% - 24px);
-}
-    &__title{
-        margin-bottom: toRem(32);
+    &__bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      max-width: calc(75% - 24px);
     }
-     &__right {
-       padding: toRem(79) toRem(48);
-     }
+    &__title {
+      margin-bottom: toRem(32);
+    }
+    &__right {
+      padding: toRem(79) toRem(48);
+    }
 
     &__star {
       &:not(:last-child) {
@@ -83,8 +98,17 @@ transform: rotate(-180deg);
         margin-bottom: toRem(36);
       }
     }
+    &__left {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &__content {
+
+
+      }
+    }
   }
- }
+}
 // @include media-breakpoint-up(xl) {
 //     .hero {
 

@@ -1,16 +1,29 @@
-.toptextslider{
-    background: var(--blue-4);
+@import "../../style/variables";
+@import "../../style/pleaceholder";
+@import "../../style/mixins";
+@import "../../style/rem";
+.toptextslider {
+  background: var(--blue-4);
+  padding: 1rem 4px;
+  color: var(--base-white);
+  @include media-breakpoint-up(md) {
     padding: 1rem 0;
-    color: var(--base-white);
-    &__item{
-        a{
-            color: var(--teal-2);
-            font-size: var(--body-font-size);
-    font-weight: 700;
-    line-height: 20px;
-    &:hover{
-      color: var(--base-white);
+  }
+  &__item {
+    a {
+      color: var(--teal-2);
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 22px;
+      display: block;
+      margin-top: toRem(8);
+      &:hover {
+        color: var(--base-white);
+      }
+      @include media-breakpoint-up(md) {
+        display: inline-block;
+        margin-top: initial;
+      }
     }
-        }
-    }
+  }
 }

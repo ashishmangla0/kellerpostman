@@ -13,7 +13,7 @@ const Header = (props) => {
           <img src={logo} alt="Logo" />
         </a>
         <div className="header__right">
-          <nav aria-label="main menu">
+          <nav aria-label="main menu" className="header__right__nav">
             <ul className="nav__list">
               <li className="nav__item">
                 <a className="nav__link" href="" tabIndex={0}>

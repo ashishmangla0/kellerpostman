@@ -48,13 +48,20 @@ img {
   .slick-slider {
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
+    @include media-breakpoint-up(md) {
+      flex-direction: row;
+    }
   }
   .slick-dots {
     position: relative;
     bottom: initial;
     display: flex !important;
     align-items: center;
-    justify-content: flex-end;
+
+    @include media-breakpoint-up(md) {
+      justify-content: flex-end;
+    }
   }
   .slick-dots li {
     button {
@@ -69,6 +76,12 @@ img {
       button {
         background: var(--base-white);
       }
+    }
+  }
+  .slick-list{
+    margin-bottom: 12px;
+    @include media-breakpoint-up(md) {
+      margin-bottom:0
     }
   }
 }

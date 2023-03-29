@@ -8,30 +8,37 @@ const Hero = (props) => {
 
   return (
     <section className="hero">
+      {mediaType !== "Mobile"}
       <div className="hero__bg">
         <img
           loading="lazy"
-          src={
-            mediaType === "Mobile"
-              ? data?.mobile_hero_image?.url
-              : data?.hero_image?.url
-          }
+          src={data?.hero_image?.url}
           alt=""
           className="hero__img"
         />
       </div>
-
       <div className="container hero__container">
         <div className="row gx-5">
           <div className="col-md-9 hero__left">
-            <div className="row">
+            {mediaType === "Mobile" && (
+              <img
+                loading="lazy"
+                src={data?.mobile_hero_image?.url}
+                alt=""
+                className="hero__img"
+              />
+            )}
+
+            <div className="row  hero__left__content">
               <div className="col-md-7">
                 <div className="hero__content">
                   <h1
                     dangerouslySetInnerHTML={{ __html: data?.title }}
-                    className="hero__title display"
+                    className="hero__title display mobile-display"
                   />
-                  <div>{data?.short_description}</div>
+                  <div className="body-18 hero__desc">
+                    {data?.short_description}
+                  </div>
                 </div>
               </div>
             </div>
